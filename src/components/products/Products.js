@@ -18,6 +18,9 @@ export default class Products extends Component {
             .then((data) => {
                 console.log("DATA " + data)
                 this.setState({ items: data }, () => console.log(this.state.items))
+            }).catch(e=>{
+                this.setState({items: []})
+                console.log("Please start the kotlin app to server the data.")
             });
     }
 
