@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Nav, Navbar, NavDropdown, Dropdown } from 'react-bootstrap'
-import { Link, NavLink } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignInAlt, faUser, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 
@@ -14,7 +14,11 @@ export default class Navigationbar extends Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto text-light">
                             <Nav.Link as={NavLink} to="/">Home</Nav.Link>
-                            <Nav.Link as={NavLink} to="/products">Products</Nav.Link>
+                            <NavDropdown title="Products" id="productsDropdown" >
+                                <NavDropdown.Item as={NavLink} to="/items">Items List</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/items/add">Add Item</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/items/remove">Remove Item</NavDropdown.Item>
+                            </NavDropdown>
                         </Nav>
                         <Nav className="mr-2 text-light" >
                             <NavDropdown title={<FontAwesomeIcon icon={faUser}/> } id="userLoginRegistrationDropDown" alignRight={true}>

@@ -4,8 +4,7 @@ import axios from 'axios'
 import React, { Component, Fragment } from 'react'
 import { Card, Table } from 'react-bootstrap'
 
-export default class Products extends Component {
-
+export default class ItemsList extends Component {
 
     constructor(props) {
         super(props)
