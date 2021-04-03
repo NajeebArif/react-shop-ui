@@ -1,3 +1,5 @@
+import { faList } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios'
 import React, { Component, Fragment } from 'react'
 import { Card, Table } from 'react-bootstrap'
@@ -35,7 +37,7 @@ export default class Products extends Component {
             <Fragment>
                 <div className="d-flex justify-content-center">
                     <Card className="mt-2">
-                        <Card.Header><Card.Title>All product List</Card.Title></Card.Header>
+                        <Card.Header className="text-left"><Card.Title><FontAwesomeIcon icon={faList}/> Items List</Card.Title></Card.Header>
                         <Card.Body>
                             <ItemsListTable items={this.state.items}/>
                         </Card.Body>
