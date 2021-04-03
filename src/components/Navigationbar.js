@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Nav, Navbar, Form, FormControl, Button } from 'react-bootstrap'
+import { Nav, Navbar, NavDropdown, Dropdown } from 'react-bootstrap'
 import { Link, NavLink } from 'react-router-dom'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignInAlt, faUser, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 
 export default class Navigationbar extends Component {
     render() {
@@ -15,16 +16,12 @@ export default class Navigationbar extends Component {
                             <Nav.Link as={NavLink} to="/">Home</Nav.Link>
                             <Nav.Link as={NavLink} to="/products">Products</Nav.Link>
                         </Nav>
-                        <Nav className="mr-2 text-light">
-                            <Nav.Link as={NavLink} to="/login">
-                                <i class="fas fa-user-tie"></i>
-                            </Nav.Link>
+                        <Nav className="mr-2 text-light" >
+                            <NavDropdown title={<FontAwesomeIcon icon={faUser}/> } id="userLoginRegistrationDropDown" alignRight={true}>
+                                <NavDropdown.Item as={NavLink} to="/login"><FontAwesomeIcon icon={faSignInAlt} /> Login</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/registration"><FontAwesomeIcon icon={faUserPlus} /> Registration</NavDropdown.Item>
+                            </NavDropdown>
                         </Nav>
-
-                        <Form inline>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
                     </Navbar.Collapse>
                 </Navbar>
             </div>
